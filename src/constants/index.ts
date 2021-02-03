@@ -3,7 +3,12 @@ import { AbstractConnector } from '@web3-react/abstract-connector'
 
 import { fortmatic, injected, portis, walletconnect, walletlink } from '../connectors'
 
-export const ROUTER_ADDRESS = '0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D'
+//
+// export const ROUTER_ADDRESS = '0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D'
+
+//ark 0x410e550773cbbe39bc7afd1f611bbab15384c6c0
+//fire 
+export const ROUTER_ADDRESS = '0x9D8c1b74900f1D87F447D102E819ced912CF01b3'
 
 export const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000'
 
@@ -13,6 +18,32 @@ export { PRELOADED_PROPOSALS } from './proposals'
 type ChainTokenList = {
   readonly [chainId in ChainId]: Token[]
 }
+
+
+// Heco
+export const HUSD = new Token(
+  ChainId.HMAINNET,
+  '0x0298c2b32eae4da002a15f36fdf7615bea3da047',
+  18,
+  'HUSD',
+  'Heco-Peg HUSD Token'
+)
+export const HETH = new Token(
+  ChainId.HMAINNET,
+  '0x64ff637fb478863b7468bc97d30a5bf3a428a1fd',
+  18,
+  'ETH',
+  'Heco-Peg ETH Token'
+)
+export const HBTC = new Token(
+  ChainId.HMAINNET,
+  '0x66a79d23e58475d2738179ca52cd0b41d73f0bea',
+  18,
+  'HBTC',
+  'Heco-Peg HBTC Token'
+)
+export const FFG = new Token(ChainId.HMAINNET, '0x51e4fb9f905a7bad3d8d56da40da1b07e4da1dde', 18, 'FFG', 'FFG')
+
 
 export const DAI = new Token(ChainId.MAINNET, '0x6B175474E89094C44Da98b954EedeAC495271d0F', 18, 'DAI', 'Dai Stablecoin')
 export const USDC = new Token(ChainId.MAINNET, '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48', 6, 'USDC', 'USD//C')
@@ -31,17 +62,19 @@ export const GOVERNANCE_ADDRESS = '0x5e4be8Bc9637f0EAA1A755019e06A68ce081D58F'
 
 export const TIMELOCK_ADDRESS = '0x1a9C8182C09F50C8318d769245beA52c32BE35BC'
 
-const UNI_ADDRESS = '0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984'
+const FFG_ADDRESS = '0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984'
 export const UNI: { [chainId in ChainId]: Token } = {
-  [ChainId.MAINNET]: new Token(ChainId.MAINNET, UNI_ADDRESS, 18, 'UNI', 'Uniswap'),
-  [ChainId.RINKEBY]: new Token(ChainId.RINKEBY, UNI_ADDRESS, 18, 'UNI', 'Uniswap'),
-  [ChainId.ROPSTEN]: new Token(ChainId.ROPSTEN, UNI_ADDRESS, 18, 'UNI', 'Uniswap'),
-  [ChainId.GÖRLI]: new Token(ChainId.GÖRLI, UNI_ADDRESS, 18, 'UNI', 'Uniswap'),
-  [ChainId.KOVAN]: new Token(ChainId.KOVAN, UNI_ADDRESS, 18, 'UNI', 'Uniswap')
+  [ChainId.MAINNET]: new Token(ChainId.MAINNET, FFG_ADDRESS, 18, 'FFG', 'FireFinance'),
+  [ChainId.RINKEBY]: new Token(ChainId.RINKEBY, FFG_ADDRESS, 18, 'FFG', 'FireFinance'),
+  [ChainId.ROPSTEN]: new Token(ChainId.ROPSTEN, FFG_ADDRESS, 18, 'FFG', 'FireFinance'),
+  [ChainId.GÖRLI]: new Token(ChainId.GÖRLI, FFG_ADDRESS, 18, 'FFG', 'FireFinance'),
+  [ChainId.KOVAN]: new Token(ChainId.KOVAN, FFG_ADDRESS, 18, 'FFG', 'FireFinance'),
+  [ChainId.HMAINNET]: new Token(ChainId.HMAINNET, FFG_ADDRESS, 18, 'FFG', 'FireFinance'),
+  [ChainId.HTESTNET]: new Token(ChainId.HTESTNET, FFG_ADDRESS, 18, 'FFG', 'FireFinance')
 }
 
 export const COMMON_CONTRACT_NAMES: { [address: string]: string } = {
-  [UNI_ADDRESS]: 'UNI',
+  [FFG_ADDRESS]: 'FFG',
   [GOVERNANCE_ADDRESS]: 'Governance',
   [TIMELOCK_ADDRESS]: 'Timelock'
 }
@@ -56,7 +89,9 @@ const WETH_ONLY: ChainTokenList = {
   [ChainId.ROPSTEN]: [WETH[ChainId.ROPSTEN]],
   [ChainId.RINKEBY]: [WETH[ChainId.RINKEBY]],
   [ChainId.GÖRLI]: [WETH[ChainId.GÖRLI]],
-  [ChainId.KOVAN]: [WETH[ChainId.KOVAN]]
+  [ChainId.KOVAN]: [WETH[ChainId.KOVAN]],
+  [ChainId.HMAINNET]: [WETH[ChainId.HMAINNET]],
+  [ChainId.HTESTNET]: [WETH[ChainId.HTESTNET]]
 }
 
 // used to construct intermediary pairs for trading

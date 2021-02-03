@@ -1,8 +1,17 @@
 {
   "name": "@uniswap/interface",
-  "description": "Uniswap Interface",
+  "description": "FireSwap Interface",
   "homepage": ".",
   "private": true,
+  "dependencies": {
+    "@uniswap/sdk": "arkswap/arkswap-sdk-ht",
+    "axios": "^0.21.1",
+    "bignumber.js": "^9.0.1",
+    "decimal.js-light": "^2.5.1",
+    "http-proxy-middleware": "^1.0.6",
+    "jsbi": "^3.1.4",
+    "toformat": "^2.0.0"
+  },
   "devDependencies": {
     "@ethersproject/experimental": "^5.0.1",
     "@popperjs/core": "^2.4.4",
@@ -30,7 +39,6 @@
     "@uniswap/governance": "^1.0.2",
     "@uniswap/liquidity-staker": "^1.0.2",
     "@uniswap/merkle-distributor": "1.0.1",
-    "@uniswap/sdk": "3.0.3",
     "@uniswap/token-lists": "^1.0.0-beta.19",
     "@uniswap/v2-core": "1.0.0",
     "@uniswap/v2-periphery": "^1.1.0-beta.0",
@@ -118,7 +126,5 @@
     ]
   },
   "license": "GPL-3.0-or-later",
-  "dependencies": {
-    "@uniswap/default-token-list": "^2.0.0"
-  }
+  "version": "0.0.0"
 }
